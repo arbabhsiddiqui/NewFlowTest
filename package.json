@@ -5,12 +5,16 @@
   "main": "./src/index.js",
   "scripts": {
     "dev": "parcel ./src/index.html",
-    "build": "parcel build ./src/index.html"
+    "build": "parcel build ./src/index.html --public-url . --no-source-maps"
   },
   "author": "Arbab Hussain",
   "license": "ISC",
   "devDependencies": {
     "parcel-bundler": "^1.12.5",
+    "parcel-plugin-imagemin": "^4.0.2",
     "sass": "^1.32.11"
+  },
+  "dependencies": {
+    "parcel-plugin-purifycss": "^1.0.5"
   }
 }

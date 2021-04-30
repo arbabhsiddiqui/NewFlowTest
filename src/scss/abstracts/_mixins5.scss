@@ -1,0 +1,21 @@
+// define media query mixin for development
+@mixin mediaSm {
+  @media screen and (max-width: 31.25em) {
+    @content;
+  }
+}
+@mixin mediaMd {
+  @media screen and (max-width: 48em) {
+    @content;
+  }
+}
+@mixin mediaLg {
+  @media screen and (min-width: 48.0625em) and (max-width: 73.125em) {
+    @content;
+  }
+}
+@mixin mediaXl {
+  @media screen and (min-width: 73.1875em) {
+    @content;
+  }
+}
