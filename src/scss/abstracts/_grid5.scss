@@ -1,0 +1,30 @@
+// small grid system made to use for rapid development
+
+.container {
+  width: calc(100% - 10em);
+  max-width: 60em;
+  margin: 0 auto;
+}
+
+.container-fluid {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+$columns: 12;
+@for $i from 1 through $columns {
+  .col-#{$i} {
+    flex: 0 0 100% / $columns * $i;
+  }
+  .col-offset-#{$i} {
+    margin-left: 100% / $columns * $i;
+  }
+}
+
+.mx-auto {
+  margin: 0 auto;
+}

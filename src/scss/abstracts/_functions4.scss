@@ -1,0 +1,94 @@
+// as name suggest it contain all the functions
+
+@use './variables2' as *;
+// text function
+
+$textStyle: ("center", "left", "right", "justify");
+
+@each $text in $textStyle {
+  .text-#{$text} {
+    text-align: #{$text};
+  }
+}
+
+// margin and padding function
+
+$spaceAmounts: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+@each $space in $spaceAmounts {
+  .m-#{$space} {
+    margin: #{$space}rem !important;
+  }
+
+  .my-#{$space} {
+    margin: #{$space}rem 0 !important;
+  }
+  .ml-#{$space} {
+    margin-left: #{$space}rem !important;
+  }
+  .mr-#{$space} {
+    margin-right: #{$space}rem !important;
+  }
+  .mx-#{$space} {
+    margin: 0 #{$space}rem !important;
+  }
+  .p-#{$space} {
+    padding: #{$space}rem !important;
+  }
+  .py-#{$space} {
+    padding: #{$space}rem 0 !important;
+  }
+  .px-#{$space} {
+    padding: 0 #{$space}rem !important;
+  }
+  .pr-#{$space} {
+    padding-right: #{$space}rem !important;
+  }
+  .pl-#{$space} {
+    padding-left: #{$space}rem !important;
+  }
+}
+
+// color function
+
+// function for auto  set text color base on bg color
+
+@function set-text-color($color) {
+  @if (lightness($color) >50) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+// color text
+
+$colorPacks: (
+  "primary": $primary,
+  "accent": $accent,
+  "secondary": $secondary,
+  "light": "#fff",
+  "dark": "#000",
+);
+
+@each $color, $value in $colorPacks {
+  .bg-#{$color} {
+    background: #{$value};
+  }
+
+  .btn-#{$color} {
+    background: #{$value};
+    border: 1px solid #{$value};
+    color: #fff;
+
+    &:hover {
+      color: #{$value};
+      background: #fff;
+      border: 1px solid #{$value};
+    }
+  }
+
+  .text-#{$color} {
+    color: #{$value};
+  }
+}

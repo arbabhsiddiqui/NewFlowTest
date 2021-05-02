@@ -1,4 +1,6 @@
-@use '../abstracts/variables2' as *;
+// this file contain all the typography mixin for future use
+
+@use './variables2' as *;
 
 @mixin body-font {
   font-family: $body-font;
@@ -11,12 +13,4 @@
   font-family: $header-font;
   font-weight: bold;
   letter-spacing: 1%;
-}
-
-$textStyle: ("center", "left", "right", "justify");
-
-@each $text in $textStyle {
-  .text-#{$text} {
-    text-align: #{$text};
-  }
 }
