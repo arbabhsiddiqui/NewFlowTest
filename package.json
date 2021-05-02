@@ -5,7 +5,7 @@
   "main": "./src/index.js",
   "scripts": {
     "dev": "parcel ./src/index.html",
-    "build": "parcel build ./src/index.html --public-url . --no-source-maps"
+    "build": "parcel build src/index.html --public-url . --no-cache --out-dir dist  && node postbuild.js"
   },
   "author": "Arbab Hussain",
   "license": "ISC",
@@ -15,6 +15,10 @@
     "sass": "^1.32.11"
   },
   "dependencies": {
-    "parcel-plugin-purifycss": "^1.0.5"
+    "fs": "0.0.1-security",
+    "lodash.escaperegexp": "^4.1.2",
+    "parcel-plugin-purifycss": "^1.0.5",
+    "path": "^0.12.7",
+    "replace-in-file": "^6.2.0"
   }
 }
